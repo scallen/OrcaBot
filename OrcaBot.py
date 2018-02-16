@@ -43,12 +43,25 @@ async def dnd(ctx):
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
     
+#Barbarian stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
+#Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
+@bot.group(pass_context=True)
+async def barbarian(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="THE BARBARIAN CLASS", url="https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInc", description=":fire::rage::fire:", color=#FF0000)
+        embed.set_thumbnail(url="https://vignette.wikia.nocookie.net/criticalrole/images/7/74/Grog-Strongjaw-by-David-Rodrigues.jpg/revision/latest?cb=20161213045136")
+        embed.add_field(name="-----", value="[Here's a list of Barbarian Abilities!](https://roll20.net/compendium/dnd5e/Barbarian#content)", inline=False)
+        await bot.say(embed=embed)
+#Subcommand formats in case some are added later
+#@barbarian.command()
+#async def SUBCOMMAND():
+
 #Bard stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
 #Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
 @bot.group(pass_context=True)
 async def bard(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="THE BARD CLASS", url="https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInM", description="\m/:kissing:\m/", color=0x80ff80)
+        embed=discord.Embed(title="THE BARD CLASS", url="https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInM", description="\m/:kissing:\m/", color=#FF00FF)
         embed.set_thumbnail(url="https://tribality.com/wp-content/uploads/2015/02/bard-bagpipes-240x300.jpg")
         embed.add_field(name="-----", value="[Here's a list of Bard Spells!](https://roll20.net/compendium/dnd5e/Bard%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
