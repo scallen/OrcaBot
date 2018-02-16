@@ -36,7 +36,6 @@ async def dnd(ctx):
     embed=discord.Embed(title="DND Links", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit", description="The Readme is really useful!", color=0x80ff80)
     embed.set_thumbnail(url="https://www.guerrillatees.com/media/thumbs/run-dnd-thumb-1.jpg")
     embed.add_field(name="-----", value="[Readme!](https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit)", inline=False)
-
     embed.add_field(name="-----", value="[Players Hand Book!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/view)", inline=False)
     embed.add_field(name="-----", value="[Roll20 Campaign!](https://app.roll20.net/campaigns/details/422318/the-unknown-frontier)", inline=False)
     embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
@@ -46,14 +45,17 @@ async def dnd(ctx):
     
 #Bard stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
 #Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
-"""@bot.group(pass_context=True)
+@bot.group(pass_context=True)
 async def bard(ctx):
     if ctx.invoked_subcommand is None:
-        await bot.say('Plays instruments to channel magic... or something like that')
+        embed=discord.Embed(title="BARD \m/:kissing:\m/", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.h49uu4x6bsxp", description="Music is Magic!", color=0x80ff80)
+        embed.set_thumbnail(url="https://tribality.com/wp-content/uploads/2015/02/bard-bagpipes-240x300.jpg")
+        embed.add_field(name="-----", value="[Here's a list of Bard Spells!](https://roll20.net/compendium/dnd5e/Bard%20Spells%20by%20Level#content)", inline=False)
+        await bot.say(embed=embed)
+#Subcommand formats in case some are added later
+#@bard.command()
+#async def SUBCOMMAND():
+    
 
-@bard.command()
-async def push(remote: str, branch: str):
-    await bot.say('Pushing to {} {}'.format(remote, branch)
-"""    
     
 bot.run(OrcaConfig.token)
