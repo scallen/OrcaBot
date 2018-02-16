@@ -42,7 +42,21 @@ async def dnd(ctx):
     embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
-    
+
+#Barbarian stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
+#Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
+@bot.group(pass_context=True)
+async def barbarian(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="BARBARIAN", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.5q5rydukqb82", description=":fire: :rage: :fire:", color=0xff0000)
+        embed.set_thumbnail(url="https://i.warosu.org/data/tg/img/0375/36/1421886982963.jpg")
+        embed.add_field(name="-----", value="[Here's a link to the Barbarian PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInc)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Barbarian Abilities!](https://roll20.net/compendium/dnd5e/Barbarian#content)", inline=False)
+        await bot.say(embed=embed)
+#Subcommand formats in case some are added later
+#@bard.command()
+#async def SUBCOMMAND():
+
 #Bard stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
 #Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
 @bot.group(pass_context=True)
