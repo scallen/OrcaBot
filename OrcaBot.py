@@ -54,7 +54,7 @@ async def artificer(ctx):
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="ARTIFICIER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.v1a3tmxksgir", description=":tools:", color=0xCCCCCC)
         embed.set_thumbnail(url="http://www.dandwiki.com/w/images/thumb/5/5a/Steamborg_Gunslinger.jpeg/390px-Steamborg_Gunslinger.jpeg")
-        embed.add_field(name="-----", value="[Here's a list of artificer abilities!](https://drive.google.com/open?id=1wt-uTcc0Z645nmxJzNj-SNoqAiRM3Cix)", inline=False)
+        embed.add_field(name="-----", value="[Here's a link to the Artificer Abilities!](https://drive.google.com/open?id=1wt-uTcc0Z645nmxJzNj-SNoqAiRM3Cix)", inline=False)
         await bot.say(embed=embed)
 
 #Barbarian stuff goes here. 
@@ -76,5 +76,17 @@ async def bard(ctx):
         embed.add_field(name="-----", value="[Here's a link to the Bard PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInM)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Bard Spells!](https://roll20.net/compendium/dnd5e/Bard%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
+        
+#Cleric stuff goes here.
+@bot.group(pass_context=True)
+async def cleric(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="Cleric", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.azxgqgx7e8pp", description=":pray:", color=0xffffff)
+        embed.set_thumbnail(url="https://i1.wp.com/nerdarchy.com/wp-content/uploads/2015/11/badcleric.png?resize=238%2C300&ssl=1")
+        embed.add_field(name="-----", value="[Here's a link to the Cleric PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEfxZ4)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Cleric Spells!](https://roll20.net/compendium/dnd5e/Cleric%20Spells%20by%20Level#content)", inline=False)
+        await bot.say(embed=embed)
 
+        
+##starts Orcabot
 bot.run(OrcaConfig.token)
