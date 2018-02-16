@@ -57,4 +57,3 @@ async def push(remote: str, branch: str):
 """    
     
 bot.run(OrcaConfig.token)
-#bot.run("MzQ3OTc4NTUxNTA2NTAxNjMz.DWZoyg.JzXbSH2Hi5EUi665_ejjQKosHC0")
