@@ -45,7 +45,7 @@ async def dnd(ctx):
     
 #Bard stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
 #Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
-"""@bot.group(pass_context=True)
+@bot.group(pass_context=True)
 async def bard(ctx):
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="BARD", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.h49uu4x6bsxp", description="\m/:kissing:\m/", color=0xff00ff)
