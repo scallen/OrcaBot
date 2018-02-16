@@ -48,8 +48,9 @@ async def dnd(ctx):
 """@bot.group(pass_context=True)
 async def bard(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="BARD \m/:kissing:\m/", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.h49uu4x6bsxp", description="Music is Magic!", color=0x80ff80)
+        embed=discord.Embed(title="BARD", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.h49uu4x6bsxp", description="\m/:kissing:\m/", color=0xff00ff)
         embed.set_thumbnail(url="https://tribality.com/wp-content/uploads/2015/02/bard-bagpipes-240x300.jpg")
+        embed.add_field(name="-----", value="[Here's a link to the Bard PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInM)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Bard Spells!](https://roll20.net/compendium/dnd5e/Bard%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
 #Subcommand formats in case some are added later
