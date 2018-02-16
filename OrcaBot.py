@@ -43,8 +43,21 @@ async def dnd(ctx):
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
 
-#Barbarian stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
-#Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
+##Classes
+###Use !CLASSNAME to get an embed with links to class info.  
+####Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
+#####Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
+
+#Artificer stuff goes here.
+@bot.group(pass_context=True)
+async def artificer(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="ARTIFICIER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.v1a3tmxksgir", description=":tools:", color=0xCCCCCC)
+        embed.set_thumbnail(url="http://www.dandwiki.com/w/images/thumb/5/5a/Steamborg_Gunslinger.jpeg/390px-Steamborg_Gunslinger.jpeg")
+        embed.add_field(name="-----", value="[Here's a list of artificer abilities!](https://drive.google.com/open?id=1wt-uTcc0Z645nmxJzNj-SNoqAiRM3Cix)", inline=False)
+        await bot.say(embed=embed)
+
+#Barbarian stuff goes here. 
 @bot.group(pass_context=True)
 async def barbarian(ctx):
     if ctx.invoked_subcommand is None:
@@ -53,12 +66,8 @@ async def barbarian(ctx):
         embed.add_field(name="-----", value="[Here's a link to the Barbarian PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInc)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Barbarian Abilities!](https://roll20.net/compendium/dnd5e/Barbarian#content)", inline=False)
         await bot.say(embed=embed)
-#Subcommand formats in case some are added later
-#@bard.command()
-#async def SUBCOMMAND():
 
-#Bard stuff goes here.  Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
-#Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
+#Bard stuff goes here.
 @bot.group(pass_context=True)
 async def bard(ctx):
     if ctx.invoked_subcommand is None:
@@ -67,8 +76,5 @@ async def bard(ctx):
         embed.add_field(name="-----", value="[Here's a link to the Bard PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEtInM)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Bard Spells!](https://roll20.net/compendium/dnd5e/Bard%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
-#Subcommand formats in case some are added later
-#@bard.command()
-#async def SUBCOMMAND():
 
 bot.run(OrcaConfig.token)
