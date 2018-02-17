@@ -81,12 +81,21 @@ async def bard(ctx):
 @bot.group(pass_context=True)
 async def cleric(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="Cleric", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.azxgqgx7e8pp", description=":pray:", color=0xffffff)
+        embed=discord.Embed(title="CLERIC", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.azxgqgx7e8pp", description=":pray:", color=0xffffff)
         embed.set_thumbnail(url="https://i1.wp.com/nerdarchy.com/wp-content/uploads/2015/11/badcleric.png?resize=238%2C300&ssl=1")
         embed.add_field(name="-----", value="[Here's a link to the Cleric PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEfxZ4)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Cleric Spells!](https://roll20.net/compendium/dnd5e/Cleric%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
-
+        
+#Druid stuff goes here.
+@bot.group(pass_context=True)
+async def druid(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="DRUID", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ns279cfk403q", description=":evergreen_tree:", color=0x93C47D)
+        embed.set_thumbnail(url="https://i2.wp.com/nerdarchy.com/wp-content/uploads/2015/11/twisted_forest_druid_by_ubermonster-d6imryh.jpg?resize=225%2C300&ssl=1")
+        embed.add_field(name="-----", value="[Here's a link to the Druid PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqEfxb0)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Druid Spells!](https://roll20.net/compendium/dnd5e/Druid%20Spells%20by%20Level#content)", inline=False)
+        await bot.say(embed=embed)
         
 ##starts Orcabot
 bot.run(OrcaConfig.token)
