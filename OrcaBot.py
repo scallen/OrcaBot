@@ -116,6 +116,16 @@ async def lumberjack(ctx):
         embed.add_field(name="-----", value="[Here's a list of Lumberjack Abilites!](https://drive.google.com/file/d/1CZUa9FzNthWtPwi_n4i8G4OO9E0g6rbY/view)", inline=False)
         await bot.say(embed=embed)
 
+#Monk stuff goes here.
+@bot.group(pass_context=True)
+async def monk(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="MONK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ntwkh2zi190w", description=":spy:", color=0x000000)
+        embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=70455&d=1442794402")
+        embed.add_field(name="-----", value="[Here's a link to the Monk PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c7s)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Monk Abilites!](https://roll20.net/compendium/dnd5e/Monk#content)", inline=False)
+        await bot.say(embed=embed)
+        
 #Ranger stuff goes here.
 @bot.group(pass_context=True)
 async def ranger(ctx):
@@ -124,6 +134,19 @@ async def ranger(ctx):
         embed.set_thumbnail(url="https://vignette.wikia.nocookie.net/dnd4/images/5/5a/Elf_ranger.jpg/revision/latest?cb=20130708222756")
         embed.add_field(name="-----", value="[Here's a link to the Revised Ranger!](https://drive.google.com/file/d/14HvaV_D_jOv3Vn5B8O3BBIxNYUiAODw1/view)", inline=False)
         await bot.say(embed=embed)
+        
+#Rogue stuff goes here.
+@bot.group(pass_context=True)
+async def rogue(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="ROGUE", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.g2jbcljwqu9n", description=":spy:", color=0x000000)
+        embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=86366&d=1500933102")
+        embed.add_field(name="-----", value="[Here's a link to the Rogue PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c7c)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Rogue Abilites!](https://roll20.net/compendium/dnd5e/Rogue#content)", inline=False)
+        await bot.say(embed=embed)
+        
 
+        
+        
 ##starts Orcabot
 bot.run(OrcaConfig.token)
