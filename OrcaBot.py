@@ -107,5 +107,23 @@ async def fighter(ctx):
         embed.add_field(name="-----", value="[Here's a list of Fighter Abilites!](https://roll20.net/compendium/dnd5e/Fighter#content)", inline=False)
         await bot.say(embed=embed)
         
+#Lumberjack stuff goes here.
+@bot.group(pass_context=True)
+async def lumberjack(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="LUMBERJACK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.j8e62xi5b8cu", description=":evergreen_tree::hammer:", color=0xB6D7A8)
+        embed.set_thumbnail(url="http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/daily/arcana/953_orcishlumberjack.jpg")
+        embed.add_field(name="-----", value="[Here's a list of Lumberjack Abilites!](https://drive.google.com/file/d/1CZUa9FzNthWtPwi_n4i8G4OO9E0g6rbY/view)", inline=False)
+        await bot.say(embed=embed)
+
+#Ranger stuff goes here.
+@bot.group(pass_context=True)
+async def ranger(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="RANGER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.9z317zbgb7do", description=":bow_and_arrow:", color=0x00FF00)
+        embed.set_thumbnail(url="https://vignette.wikia.nocookie.net/dnd4/images/5/5a/Elf_ranger.jpg/revision/latest?cb=20130708222756")
+        embed.add_field(name="-----", value="[Here's a link to the Revised Ranger!](https://drive.google.com/file/d/14HvaV_D_jOv3Vn5B8O3BBIxNYUiAODw1/view)", inline=False)
+        await bot.say(embed=embed)
+
 ##starts Orcabot
 bot.run(OrcaConfig.token)
