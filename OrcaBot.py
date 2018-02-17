@@ -43,6 +43,15 @@ async def dnd(ctx):
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
 
+##Languages
+@bot.group(pass_context=True)
+async def languages(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="LANGUAGES", url="https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c70", description=":lips:", color=0xCCCCCC)
+        embed.add_field(name="Common Languages", value="```\nCommon\nDwarvish\nElvish\nGiant\nGnomish\nGoblin\nHalfing\nOrc```", inline=False)
+        embed.add_field(name="Exotic Languages", value="```\nAbyssal\nCelestial\nDraconic\nDeep Speech\nInfernal\nPrimordial\nSylvan\nUndercommon```", inline=False)
+        await bot.say(embed=embed)
+    
 ##Classes
 ###Use !CLASSNAME to get an embed with links to class info.  
 ####Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
