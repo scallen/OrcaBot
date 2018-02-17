@@ -97,5 +97,15 @@ async def druid(ctx):
         embed.add_field(name="-----", value="[Here's a list of Druid Spells!](https://roll20.net/compendium/dnd5e/Druid%20Spells%20by%20Level#content)", inline=False)
         await bot.say(embed=embed)
         
+#Fighter stuff goes here.
+@bot.group(pass_context=True)
+async def fighter(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="FIGHTER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.lc1g2x3jo7al", description=":muscle::man_in_tuxedo::punch:", color=0xFF9900)
+        embed.set_thumbnail(url="https://i0.wp.com/nerdarchy.com/wp-content/uploads/2016/08/dwarf-fighter.jpg?fit=900%2C758&ssl=1")
+        embed.add_field(name="-----", value="[Here's a link to the Fighter PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c7I)", inline=False)
+        embed.add_field(name="-----", value="[Here's a list of Fighter Abilites!](https://roll20.net/compendium/dnd5e/Fighter#content)", inline=False)
+        await bot.say(embed=embed)
+        
 ##starts Orcabot
 bot.run(OrcaConfig.token)
