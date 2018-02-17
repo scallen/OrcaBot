@@ -120,7 +120,7 @@ async def lumberjack(ctx):
 @bot.group(pass_context=True)
 async def monk(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="MONK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ntwkh2zi190w", description=":spy:", color=0x000000)
+        embed=discord.Embed(title="MONK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ntwkh2zi190w", description=":eye:", color=0xFFFF00)
         embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=70455&d=1442794402")
         embed.add_field(name="-----", value="[Here's a link to the Monk PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c7s)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Monk Abilites!](https://roll20.net/compendium/dnd5e/Monk#content)", inline=False)
@@ -139,7 +139,7 @@ async def ranger(ctx):
 @bot.group(pass_context=True)
 async def rogue(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="ROGUE", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.g2jbcljwqu9n", description=":spy:", color=0x000000)
+        embed=discord.Embed(title="ROGUE", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.g2jbcljwqu9n", description="spy:", color=0x000000)
         embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=86366&d=1500933102")
         embed.add_field(name="-----", value="[Here's a link to the Rogue PHB!](https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c7c)", inline=False)
         embed.add_field(name="-----", value="[Here's a list of Rogue Abilites!](https://roll20.net/compendium/dnd5e/Rogue#content)", inline=False)
