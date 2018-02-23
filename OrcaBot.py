@@ -40,9 +40,21 @@ async def dnd(ctx):
     embed.add_field(name="-----", value="[Roll20 Campaign!](https://app.roll20.net/campaigns/details/422318/the-unknown-frontier)", inline=False)
     embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
     embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+    embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
 
+##Combat
+@bot.group(pass_context=True)
+async def combat(ctx):
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description=":fencer:", color=0xff0000)
+        embed.add_field(name="Combat Steps", value="\n1) Determine Surprise\n2) Establish Positions\n3) Roll Initiative\n4) Take Turns\n5) Repeat 4 Until Combat is Concluded!", inline=False)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
+        
 ##Languages
 @bot.group(pass_context=True)
 async def languages(ctx):
