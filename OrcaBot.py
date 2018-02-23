@@ -28,7 +28,7 @@ async def info(ctx, user: discord.Member):
     embed.set_thumbnail(url=user.avatar_url)
     await bot.say(embed=embed)
     
-#!dnd has links to the readme, phb, roll20 campaign
+####[p]dnd has links to the readme, phb, roll20 campaign
 #Old Format: #embed.add_field(name="Readme", value="[Click on me!](LINK)", inline=False)
 @bot.command(pass_context=True)
 async def dnd(ctx):
@@ -44,18 +44,71 @@ async def dnd(ctx):
     embed.set_footer(text="When in doubt, check the Readme")
     await bot.say(embed=embed)
 
-##Combat
+####[p]combat
 @bot.group(pass_context=True)
 async def combat(ctx):
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description=":fencer:", color=0xff0000)
+        embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you can use **movement**, make one **action**, make one **bonus** action, make an **interaction**.  A **reaction** may occur during your turn or someone else's turn.", color=0xff0000)
         embed.add_field(name="Combat Steps", value="\n1) Determine Surprise\n2) Establish Positions\n3) Roll Initiative\n4) Take Turns\n5) Repeat 4 Until Combat is Concluded!", inline=False)
         embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
         embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
         embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
         await bot.say(embed=embed)
+
+##[p]combat action
+@combat.command(pass_context=True)
+async def action(ctx):
+        embed=discord.Embed(title="Combat Actions", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may make ONE **action**:", color=0xff0000)
+        embed.add_field(name="Attack", value="Melee or ranged attack", inline=False)
+        embed.add_field(name="Cast a Spell", value="Assuming cast time of 1 action", inline=False)
+        embed.add_field(name="Grapple", value="Attempt to latch onto a target", inline=False)
+        embed.add_field(name="Shove", value="Attempt to push a target back one space", inline=False)
+        embed.add_field(name="Dash", value="Double your movement speed", inline=False)
+        embed.add_field(name="Disengage", value="Move without provoking opportunity attacks", inline=False)
+        embed.add_field(name="Dodge", value="Attacks against you have disadvantage and you have advantage on dex saves", inline=False)
+        embed.add_field(name="Escape", value="Attempt to escape a grapple using your Athletics or Acrobatics against their Athletics", inline=False)
+        embed.add_field(name="Help", value="Grant an ally advantage", inline=False)
+        embed.add_field(name="Hide", value="Make a Stealth check to attempt to become Hidden", inline=False)
+        embed.add_field(name="Search", value="Attempt to find something", inline=False)
+        embed.add_field(name="Use Class Feature", value="Some Class features use an action", inline=False)
+        embed.add_field(name="Use Race Feature", value="Some Race features use an action", inline=False)
+        embed.add_field(name="Improvise!", value="Any action not on the list", inline=False)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
+
+##[p]combat movement
+@combat.command(pass_context=True)
+async def movement(ctx):
+        embed=discord.Embed(title="Combat Movement", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may move your character as far as your **movement** speed allows (usually 30 feet / 6 squares).  \n\nYou may use all your movement in one go, or you may break it up between an action.  E.G. Move 10 feet north, then attack, then move 20 feet east", color=0xff0000)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
         
-##Languages
+##[p]combat interaction
+@combat.command(pass_context=True)
+async def interaction(ctx):
+        embed=discord.Embed(title="Combat Interaction", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may do an **interaction**:\n\nDraw or sheathe a weapon\nOpen or close a door\nWithdraw an item from your pack\nPick up a dropped or unattended item\nHand an item to another player\nThrow a lever or switch\nTurn a key in a lock\nPull the hood of your cloak up\nOther small actions", color=0xff0000)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
+        
+##[p]combat reaction
+@combat.command(pass_context=True)
+async def reaction(ctx):
+        embed=discord.Embed(title="Combat Reaction", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="You only get ONE **reaction** per turn, however your reaction can be used during another creature's turn.  Your reaction can be used for an attack of opportunity or for various class features & spells that require a casting time of one reaction", color=0xff0000)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
+        
+##[p]combat bonus
+##BONUS ACTION GOES HERE!
+
+####Languages
 @bot.group(pass_context=True)
 async def languages(ctx):
     if ctx.invoked_subcommand is None:
