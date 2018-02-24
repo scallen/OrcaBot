@@ -140,18 +140,15 @@ async def languages(ctx):
 #####Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
 
 @bot.group(pass_context=True)
-async def class(ctx):
+async def classes(ctx):
     """lists the different playable classes (so far)"""
     if ctx.invoked_subcommand is None:
-        embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you can use **movement**, make one **action**, make one **bonus** action, make an **interaction**.  A **reaction** may occur during your turn or someone else's turn.", color=0xff0000)
-        embed.add_field(name="Combat Steps", value="\n1) Determine Surprise\n2) Establish Positions\n3) Roll Initiative\n4) Take Turns\n5) Repeat 4 Until Combat is Concluded!", inline=False)
-        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
-        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
-        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        embed=discord.Embed(title="Classes:", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit?disco=AAAABqch2sA", description="\nArtificer\nBarbarian\nBard\nCleric\nDruid\nFighter\nLumberjack\nMonk\nMystic\nPaladin\nRanger\nRogue\nShaman\nSorcerer\nWarlock\nWizard", color=0xff0000)
+        #embed.set_footer(text="When in doubt, check the Readme")
         await bot.say(embed=embed)
 
 #Artificer stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def artificer(ctx):
     """a class that enhances items through engineering and magic"""
     if ctx.invoked_subcommand is None:
@@ -161,7 +158,8 @@ async def artificer(ctx):
         await bot.say(embed=embed)
 
 #Barbarian stuff goes here. 
-@bot.group(pass_context=True)
+##@bot.group(pass_context=True)   BACKUP
+@classes.command(pass_context=True)
 async def barbarian(ctx):
     """a class that enters a rage and smashes stuff"""
     if ctx.invoked_subcommand is None:
@@ -172,7 +170,7 @@ async def barbarian(ctx):
         await bot.say(embed=embed)
 
 #Bard stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def bard(ctx):
     """a class that buffs party members through music"""
     if ctx.invoked_subcommand is None:
@@ -183,7 +181,7 @@ async def bard(ctx):
         await bot.say(embed=embed)
         
 #Cleric stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def cleric(ctx):
     """a class that helps others through faith"""
     if ctx.invoked_subcommand is None:
@@ -194,7 +192,7 @@ async def cleric(ctx):
         await bot.say(embed=embed)
         
 #Druid stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def druid(ctx):
     """a class that violently protects nature"""
     if ctx.invoked_subcommand is None:
@@ -205,7 +203,7 @@ async def druid(ctx):
         await bot.say(embed=embed)
         
 #Fighter stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def fighter(ctx):
     """a class that fights"""
     if ctx.invoked_subcommand is None:
@@ -216,7 +214,7 @@ async def fighter(ctx):
         await bot.say(embed=embed)
         
 #Lumberjack stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def lumberjack(ctx):
     """a class that Dylan wanted to play as for some reason"""
     if ctx.invoked_subcommand is None:
@@ -226,7 +224,7 @@ async def lumberjack(ctx):
         await bot.say(embed=embed)
 
 #Monk stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def monk(ctx):
     """a class that knows kung fu"""
     if ctx.invoked_subcommand is None:
@@ -237,7 +235,7 @@ async def monk(ctx):
         await bot.say(embed=embed)
         
 #Ranger stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def ranger(ctx):
     """a class that does everything but poorly"""
     if ctx.invoked_subcommand is None:
@@ -247,7 +245,7 @@ async def ranger(ctx):
         await bot.say(embed=embed)
         
 #Rogue stuff goes here.
-@bot.group(pass_context=True)
+@classes.command(pass_context=True)
 async def rogue(ctx):
     """a class that everyone wants to be"""
     if ctx.invoked_subcommand is None:
