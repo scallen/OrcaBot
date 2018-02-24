@@ -47,6 +47,7 @@ async def dnd(ctx):
 ####[p]combat
 @bot.group(pass_context=True)
 async def combat(ctx):
+    """describes DND combat and has subcommands"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you can use **movement**, make one **action**, make one **bonus** action, make an **interaction**.  A **reaction** may occur during your turn or someone else's turn.", color=0xff0000)
         embed.add_field(name="Combat Steps", value="\n1) Determine Surprise\n2) Establish Positions\n3) Roll Initiative\n4) Take Turns\n5) Repeat 4 Until Combat is Concluded!", inline=False)
@@ -58,6 +59,7 @@ async def combat(ctx):
 ##[p]combat action
 @combat.command(pass_context=True)
 async def action(ctx):
+        """lists possibles actions during combat"""
         embed=discord.Embed(title="Combat Actions", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may make ONE **action**:", color=0xff0000)
         embed.add_field(name="Attack", value="Melee or ranged attack", inline=False)
         embed.add_field(name="Cast a Spell", value="Assuming cast time of 1 action", inline=False)
@@ -81,6 +83,7 @@ async def action(ctx):
 ##[p]combat movement
 @combat.command(pass_context=True)
 async def movement(ctx):
+        """describes movement during combat"""
         embed=discord.Embed(title="Combat Movement", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may move your character as far as your **movement** speed allows (usually 30 feet / 6 squares).  \n\nYou may use all your movement in one go, or you may break it up between an action.  E.G. Move 10 feet north, then attack, then move 20 feet east", color=0xff0000)
         embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
         embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
@@ -90,7 +93,8 @@ async def movement(ctx):
 ##[p]combat interaction
 @combat.command(pass_context=True)
 async def interaction(ctx):
-        embed=discord.Embed(title="Combat Interaction", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may do an **interaction**:\n\nDraw or sheathe a weapon\nOpen or close a door\nWithdraw an item from your pack\nPick up a dropped or unattended item\nHand an item to another player\nThrow a lever or switch\nTurn a key in a lock\nPull the hood of your cloak up\nOther small actions", color=0xff0000)
+        """lists possible interactions during combat"""
+        embed=discord.Embed(title="Combat Interaction", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you may do a free **interaction**:\n\nDraw or sheathe a weapon\nOpen or close a door\nWithdraw an item from your pack\nPick up a dropped or unattended item\nHand an item to another player\nThrow a lever or switch\nTurn a key in a lock\nPull the hood of your cloak up\nOther small actions", color=0xff0000)
         embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
         embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
         embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
@@ -99,6 +103,7 @@ async def interaction(ctx):
 ##[p]combat reaction
 @combat.command(pass_context=True)
 async def reaction(ctx):
+        """lists possible reactions during combat"""
         embed=discord.Embed(title="Combat Reaction", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="You only get ONE **reaction** per turn, however your reaction can be used during another creature's turn.  Your reaction can be used for an attack of opportunity or for various class features & spells that require a casting time of one reaction", color=0xff0000)
         embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
         embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
@@ -108,6 +113,7 @@ async def reaction(ctx):
 ##[p]combat bonus
 @combat.command(pass_context=True)
 async def bonus(ctx):
+        """lists possible bonus actions during combat"""
         embed=discord.Embed(title="Combat Bonus Action", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="Many Classes and Races feature **bonus** actions, however you only get to use ONE **bonus** action per turn", color=0xff0000)
         embed.add_field(name="Offhand Attack", value="Used while fighting with two weapons", inline=False)
         embed.add_field(name="Cast a Spell", value="Cast time of 1 bonus action", inline=False)
@@ -121,6 +127,7 @@ async def bonus(ctx):
 ####Languages
 @bot.group(pass_context=True)
 async def languages(ctx):
+    """lists current known languages in the campaign"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="LANGUAGES", url="https://drive.google.com/file/d/0ByQPYPddGJI2RmppdzZWRnF5RHc/edit?disco=AAAABqE3c70", description=":lips:", color=0xCCCCCC)
         embed.add_field(name="Common Languages", value="```\nCommon\nDwarvish\nElvish\nGiant\nGnomish\nGoblin\nHalfing\nOrc```", inline=False)
@@ -132,9 +139,21 @@ async def languages(ctx):
 ####Info on subcommands can be found here: https://twentysix26.github.io/Red-Docs/red_guide_subcommands/
 #####Basically the main command is @bot.group() async def COMMAND and the subcommands are @COMMAND.command() async def SUBCOMMAND
 
+@bot.group(pass_context=True)
+async def class(ctx):
+    """lists the different playable classes (so far)"""
+    if ctx.invoked_subcommand is None:
+        embed=discord.Embed(title="Combat", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="During your turn you can use **movement**, make one **action**, make one **bonus** action, make an **interaction**.  A **reaction** may occur during your turn or someone else's turn.", color=0xff0000)
+        embed.add_field(name="Combat Steps", value="\n1) Determine Surprise\n2) Establish Positions\n3) Roll Initiative\n4) Take Turns\n5) Repeat 4 Until Combat is Concluded!", inline=False)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
+
 #Artificer stuff goes here.
 @bot.group(pass_context=True)
 async def artificer(ctx):
+    """a class that enhances items through engineering and magic"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="ARTIFICIER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.v1a3tmxksgir", description=":tools:", color=0xCCCCCC)
         embed.set_thumbnail(url="http://www.dandwiki.com/w/images/thumb/5/5a/Steamborg_Gunslinger.jpeg/390px-Steamborg_Gunslinger.jpeg")
@@ -144,6 +163,7 @@ async def artificer(ctx):
 #Barbarian stuff goes here. 
 @bot.group(pass_context=True)
 async def barbarian(ctx):
+    """a class that enters a rage and smashes stuff"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="BARBARIAN", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.5q5rydukqb82", description=":fire: :rage: :fire:", color=0xff0000)
         embed.set_thumbnail(url="https://i.warosu.org/data/tg/img/0375/36/1421886982963.jpg")
@@ -154,6 +174,7 @@ async def barbarian(ctx):
 #Bard stuff goes here.
 @bot.group(pass_context=True)
 async def bard(ctx):
+    """a class that buffs party members through music"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="BARD", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.h49uu4x6bsxp", description="\m/:kissing:\m/", color=0xff00ff)
         embed.set_thumbnail(url="https://tribality.com/wp-content/uploads/2015/02/bard-bagpipes-240x300.jpg")
@@ -164,6 +185,7 @@ async def bard(ctx):
 #Cleric stuff goes here.
 @bot.group(pass_context=True)
 async def cleric(ctx):
+    """a class that helps others through faith"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="CLERIC", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.azxgqgx7e8pp", description=":pray:", color=0xffffff)
         embed.set_thumbnail(url="https://i1.wp.com/nerdarchy.com/wp-content/uploads/2015/11/badcleric.png?resize=238%2C300&ssl=1")
@@ -174,6 +196,7 @@ async def cleric(ctx):
 #Druid stuff goes here.
 @bot.group(pass_context=True)
 async def druid(ctx):
+    """a class that violently protects nature"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="DRUID", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ns279cfk403q", description=":evergreen_tree:", color=0x93C47D)
         embed.set_thumbnail(url="https://i2.wp.com/nerdarchy.com/wp-content/uploads/2015/11/twisted_forest_druid_by_ubermonster-d6imryh.jpg?resize=225%2C300&ssl=1")
@@ -184,6 +207,7 @@ async def druid(ctx):
 #Fighter stuff goes here.
 @bot.group(pass_context=True)
 async def fighter(ctx):
+    """a class that fights"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="FIGHTER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.lc1g2x3jo7al", description=":muscle::man_in_tuxedo::punch:", color=0xFF9900)
         embed.set_thumbnail(url="https://i0.wp.com/nerdarchy.com/wp-content/uploads/2016/08/dwarf-fighter.jpg?fit=900%2C758&ssl=1")
@@ -194,6 +218,7 @@ async def fighter(ctx):
 #Lumberjack stuff goes here.
 @bot.group(pass_context=True)
 async def lumberjack(ctx):
+    """a class that Dylan wanted to play as for some reason"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="LUMBERJACK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.j8e62xi5b8cu", description=":evergreen_tree::hammer:", color=0xB6D7A8)
         embed.set_thumbnail(url="http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/daily/arcana/953_orcishlumberjack.jpg")
@@ -203,6 +228,7 @@ async def lumberjack(ctx):
 #Monk stuff goes here.
 @bot.group(pass_context=True)
 async def monk(ctx):
+    """a class that knows kung fu"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="MONK", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.ntwkh2zi190w", description=":eye:", color=0xFFFF00)
         embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=70455&d=1442794402")
@@ -213,6 +239,7 @@ async def monk(ctx):
 #Ranger stuff goes here.
 @bot.group(pass_context=True)
 async def ranger(ctx):
+    """a class that does everything but poorly"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="RANGER", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.9z317zbgb7do", description=":bow_and_arrow:", color=0x00FF00)
         embed.set_thumbnail(url="https://vignette.wikia.nocookie.net/dnd4/images/5/5a/Elf_ranger.jpg/revision/latest?cb=20130708222756")
@@ -222,6 +249,7 @@ async def ranger(ctx):
 #Rogue stuff goes here.
 @bot.group(pass_context=True)
 async def rogue(ctx):
+    """a class that everyone wants to be"""
     if ctx.invoked_subcommand is None:
         embed=discord.Embed(title="ROGUE", url="https://docs.google.com/document/d/1ZpodR2KdgA-BPQdYwoeiewuONXkjLt3vMwlK6JHzB_o/edit#bookmark=id.g2jbcljwqu9n", description="spy:", color=0x000000)
         embed.set_thumbnail(url="http://www.enworld.org/forum/attachment.php?attachmentid=86366&d=1500933102")
