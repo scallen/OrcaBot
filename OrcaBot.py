@@ -106,7 +106,17 @@ async def reaction(ctx):
         await bot.say(embed=embed)
         
 ##[p]combat bonus
-##BONUS ACTION GOES HERE!
+@combat.command(pass_context=True)
+async def bonus(ctx):
+        embed=discord.Embed(title="Combat Bonus Action", url="https://crobi.github.io/dnd5e-quickref/preview/quickref.html", description="Many Classes and Races feature **bonus** actions, however you only get to use ONE **bonus** action per turn", color=0xff0000)
+        embed.add_field(name="Offhand Attack", value="Used while fighting with two weapons", inline=False)
+        embed.add_field(name="Cast a Spell", value="Cast time of 1 bonus action", inline=False)
+        embed.add_field(name="Use Class Feature", value="Some Class features use an bonus action", inline=False)
+        embed.add_field(name="Use Race Feature", value="Some Race features use an bonus action", inline=False)
+        embed.add_field(name="-----", value="[Combat Chart (Simple)!](https://i.imgur.com/PngILDk.jpg)", inline=False)
+        embed.add_field(name="-----", value="[Combat Explanation (Complex)](https://roll20.net/compendium/dnd5e/Combat#content)", inline=False)
+        embed.add_field(name="-----", value="[Combat Actions (Illustrated)](https://crobi.github.io/dnd5e-quickref/preview/quickref.html)", inline=False)
+        await bot.say(embed=embed)
 
 ####Languages
 @bot.group(pass_context=True)
